@@ -49,6 +49,7 @@ private:
 
 public:
   Database(string, string &);
+  string formatCost(int n);
   void readData();
   void fetchPrice();
   void calculateSales();
@@ -102,6 +103,31 @@ void Database::calculateSales()
   }
 }
 
+// 12,34,56,780--> n=9
+// 5,3,1
+
+string Database::formatCost(int num)
+{
+  string cost = to_string(num);
+  string ans = "";
+  int n = cost.size();
+  int t = n - 4;
+  for (int i = n - 1; i >= 0; i--)
+  {
+    if (i == t)
+    {
+      ans = "," + ans;
+      ans = cost[i] + ans;
+      t -= 2;
+    }
+    else
+    {
+      ans = cost[i] + ans;
+    }
+  }
+  return ans;
+}
+
 void Database::displaySummary(string &outputFile)
 {
   this->foutput.open(outputFile, ios::out);
@@ -125,11 +151,11 @@ void Database::displaySummary(string &outputFile)
     for (int j = 1; j <= 6; j++)
     {
       this->foutput << "Salesman " << j << "\t\t\t\t\t\t"
-                    << "Rs. " << this->salesCost[i][j] << "/-\n\n";
+                    << "Rs. " << this->formatCost(this->salesCost[i][j]) << "/-\n\n";
       regSales += this->salesCost[i][j];
     }
     this->foutput << "Total sales at Region " + to_string(i) << "\t\t\t\t\t\t"
-                  << "Rs. " << regSales << "/-\n";
+                  << "Rs. " << this->formatCost(regSales) << "/-\n";
     for (int i = 0; i < 90; i++)
     {
       this->foutput << "-";
