@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <iomanip>
 #include <fstream>
+#include <ctime>
 
 using namespace std;
 
@@ -44,6 +45,7 @@ private:
   ofstream foutput;
   string companyName;
   vector<vector<int>> salesCost;
+  vector<vector<unordered_map<string, int>>> salesContent;
   vector<record> rows;
   unordered_map<string, int> priceMap;
 
@@ -54,6 +56,7 @@ public:
   void fetchPrice();
   void calculateSales();
   void displaySummary(string &);
+  // void fetchRecord(int, int, string);
 };
 
 Database::Database(string company, string &inputFile)
@@ -61,9 +64,11 @@ Database::Database(string company, string &inputFile)
   this->companyName = company;
   // 4 regions, each region has 6 salesmen --> 1 based indexing
   salesCost.resize(5);
+  salesContent.resize(5);
   for (int i = 1; i <= 4; i++)
   {
     salesCost[i].resize(7);
+    salesContent[i].resize(7);
   }
   this->finput.open(inputFile, ios::in);
   this->fetchPrice();
@@ -76,7 +81,9 @@ void Database::readData()
   this->finput >> row; // ignore heading
   while (this->finput >> row)
   {
-    rows.push_back(toRecord(row));
+    record rec = toRecord(row);
+    // this->salesContent[rec.regionNo][rec.salesManNo][rec._id] = this->priceMap[rec._id] * rec.unitsSold;
+    rows.push_back(rec);
   }
 }
 
@@ -132,7 +139,9 @@ void Database::displaySummary(string &outputFile)
 {
   this->foutput.open(outputFile, ios::out);
   this->calculateSales();
-  this->foutput << setw(45) << this->companyName << "\n";
+  time_t now = time(0);
+  char *dt = ctime(&now);
+  this->foutput << dt << setw(45) << this->companyName << "\n";
   for (int i = 0; i < 90; i++)
   {
     this->foutput << "-";
@@ -164,6 +173,11 @@ void Database::displaySummary(string &outputFile)
   }
 }
 
+// void Database::fetchRecord(int regionNo, int salesMan, string _id)
+// {
+//   cout << "The sale done by salesman " << salesMan << " in region " << regionNo << " for product id " << _id << " is :-" << this->salesContent[regionNo][salesMan][_id] << "\n";
+// }
+
 string INPUT_FILE = "./data.csv";
 string OUTPUT_FILE = "./output.txt";
 
@@ -171,6 +185,31 @@ int main()
 {
   Database db("ABC Company", INPUT_FILE);
   db.displaySummary(OUTPUT_FILE);
-
+  // while (true)
+  // {
+  //   char ch;
+  //   cout << "Do you want to fecth record (y/n)"
+  //        << "\n";
+  //   cin >> ch;
+  //   if (ch == 'n')
+  //   {
+  //     break;
+  //   }
+  //   else
+  //   {
+  //     int regNo, salesman;
+  //     string id;
+  //     cout << "Enter the region No."
+  //          << "\n";
+  //     cin >> regNo;
+  //     cout << "Enter the salesman No."
+  //          << "\n";
+  //     cin >> salesman;
+  //     cout << "Enter the product id"
+  //          << "\n";
+  //     cin >> id;
+  //     db.fetchRecord(regNo, salesman, id);
+  //   }
+  // }
   return 0;
 }

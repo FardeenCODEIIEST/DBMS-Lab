@@ -1,3 +1,4 @@
+Thu Jul 27 11:57:43 2023
                                   ABC Company
 ------------------------------------------------------------------------------------------
 
@@ -5,76 +6,76 @@
 Region 1
 ------------------------------------------------------------------------------------------
 
-Salesman 1						Rs. 29,500/-
+Salesman 1						Rs. 27,630/-
 
-Salesman 2						Rs. 20,600/-
+Salesman 2						Rs. 21,030/-
 
-Salesman 3						Rs. 18,600/-
+Salesman 3						Rs. 21,100/-
 
-Salesman 4						Rs. 31,700/-
+Salesman 4						Rs. 28,540/-
 
-Salesman 5						Rs. 17,600/-
+Salesman 5						Rs. 15,380/-
 
-Salesman 6						Rs. 17,600/-
+Salesman 6						Rs. 16,550/-
 
-Total sales at Region 1						Rs. 1,35,600/-
+Total sales at Region 1						Rs. 1,30,230/-
 ------------------------------------------------------------------------------------------
 
 
 Region 2
 ------------------------------------------------------------------------------------------
 
-Salesman 1						Rs. 17,300/-
+Salesman 1						Rs. 17,360/-
 
-Salesman 2						Rs. 19,200/-
+Salesman 2						Rs. 16,260/-
 
-Salesman 3						Rs. 27,000/-
+Salesman 3						Rs. 24,990/-
 
-Salesman 4						Rs. 37,200/-
+Salesman 4						Rs. 32,730/-
 
-Salesman 5						Rs. 11,500/-
+Salesman 5						Rs. 9,940/-
 
-Salesman 6						Rs. 20,900/-
+Salesman 6						Rs. 16,450/-
 
-Total sales at Region 2						Rs. 1,33,100/-
+Total sales at Region 2						Rs. 1,17,730/-
 ------------------------------------------------------------------------------------------
 
 
 Region 3
 ------------------------------------------------------------------------------------------
 
-Salesman 1						Rs. 22,700/-
+Salesman 1						Rs. 22,680/-
 
-Salesman 2						Rs. 18,700/-
+Salesman 2						Rs. 16,720/-
 
-Salesman 3						Rs. 35,600/-
+Salesman 3						Rs. 31,620/-
 
-Salesman 4						Rs. 23,000/-
+Salesman 4						Rs. 23,760/-
 
-Salesman 5						Rs. 19,400/-
+Salesman 5						Rs. 17,050/-
 
-Salesman 6						Rs. 26,900/-
+Salesman 6						Rs. 28,600/-
 
-Total sales at Region 3						Rs. 1,46,300/-
+Total sales at Region 3						Rs. 1,40,430/-
 ------------------------------------------------------------------------------------------
 
 
 Region 4
 ------------------------------------------------------------------------------------------
 
-Salesman 1						Rs. 25,000/-
+Salesman 1						Rs. 22,520/-
 
-Salesman 2						Rs. 21,000/-
+Salesman 2						Rs. 21,970/-
 
-Salesman 3						Rs. 39,000/-
+Salesman 3						Rs. 41,600/-
 
-Salesman 4						Rs. 22,400/-
+Salesman 4						Rs. 25,880/-
 
-Salesman 5						Rs. 20,700/-
+Salesman 5						Rs. 21,250/-
 
-Salesman 6						Rs. 19,400/-
+Salesman 6						Rs. 20,270/-
 
-Total sales at Region 4						Rs. 1,47,500/-
+Total sales at Region 4						Rs. 1,53,490/-
 ------------------------------------------------------------------------------------------
 
 
